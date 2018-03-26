@@ -342,4 +342,11 @@ kubectl apply -f install/kubernetes/addons/prometheus.yaml
 kubectl apply -f <(istioctl kube-inject --debug -f samples/httpbin/httpbin.yaml)
 ```
 
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/cbreaker_1queus.png)
+
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/cbreaker_1ques_stats.png)
+
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/cbreaker_10queus.png)
+
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/cbreaker_10ques_stats.png)
 
