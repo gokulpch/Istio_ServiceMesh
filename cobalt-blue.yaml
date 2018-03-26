@@ -1,0 +1,49 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: cobalt
+  labels:
+    app: cobalt
+spec:
+  selector:
+    app: cobalt
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: cobalt-blue
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cobalt
+        version: blue
+    spec:
+      containers:
+        - name: cobalt
+          image: gokulpch/nginx:blue
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gateway
+  annotations:
+    kubernetes.io/ingress.class: "istio"
+spec:
+  rules:
+  - http:
+      paths:
+      - path:
+        backend:
+          serviceName: cobalt
+          servicePort: 80
+---

@@ -1,0 +1,16 @@
+---
+apiVersion: config.istio.io/v1alpha2
+kind: RouteRule
+metadata:
+  name: cobalt-canary
+spec:
+  destination:
+    name: cobalt
+  precedence: 3
+  route:
+  - labels:
+      version: blue
+    weight: 50
+  - labels:
+      version: green
+    weight: 50

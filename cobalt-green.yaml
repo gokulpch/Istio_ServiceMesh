@@ -1,0 +1,18 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: cobalt-green
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: cobalt
+        version: green
+    spec:
+      containers:
+        - name: cobalt
+          image: gokulpch/nginx:green
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
