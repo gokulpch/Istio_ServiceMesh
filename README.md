@@ -3,6 +3,7 @@ Managing Services with Istio on Kubernetes
 
 #### Istio Control Plane Topology
 
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/istio-1.png)
 
 #### Install Istio
 
