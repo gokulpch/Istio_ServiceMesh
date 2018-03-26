@@ -327,4 +327,19 @@ root@ip-172-25-1-94:~/Istio_ServiceMesh# while true; do curl http://${GATEWAY_UR
  </ body>
  </ html>
 ```
+#### Prometheus Dashboard for Istio
+
+```
+kubectl apply -f install/kubernetes/addons/prometheus.yaml
+```
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/istio-dashboard.png)
+
+![alt text](https://github.com/gokulpch/Istio_ServiceMesh/blob/master/png/canary-blue-green.png)
+
+### Circuit Breaking
+
+```
+kubectl apply -f <(istioctl kube-inject --debug -f samples/httpbin/httpbin.yaml)
+```
+
 
